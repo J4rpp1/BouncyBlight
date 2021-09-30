@@ -5,12 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float MovementSpeed = 1;
+    public float JumpForce = 20;
+    public float gravity = -9.81f;
+    private bool isGrounded;
+    
     void Start()
     {
         
     }
 
-  
+
     void Update()
     {
         var movement = Input.GetAxis("Horizontal");
