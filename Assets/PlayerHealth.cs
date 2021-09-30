@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
         currentHealth -= Time.deltaTime * decreasePerMinute / 60f;
@@ -28,6 +30,9 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+
         }
         healthbar.SetHealth(currentHealth);
     }

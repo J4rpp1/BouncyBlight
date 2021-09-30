@@ -7,7 +7,10 @@ public class Player : MonoBehaviour
     public float MovementSpeed = 1;
     public float JumpForce = 20;
     public float gravity = -9.81f;
-    private bool isGrounded;
+    public bool isGrounded;
+    public Rigidbody2D rb;
+    public LayerMask groundLayers;
+   
     
     void Start()
     {
@@ -17,7 +20,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
+            new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayers);
+       
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+
+        if(isGrounded)
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f,1f) * JumpForce, ForceMode2D.Impulse);
+        }
+       
     }
 }
