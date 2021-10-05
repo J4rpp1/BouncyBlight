@@ -24,10 +24,14 @@ public class PlayerHealth : MonoBehaviour
     
     void Update()
     {
-        
 
+        Player player = GetComponent<Player>();
+        
+        if (player.CanMove)
 
         currentHealth -= Time.deltaTime * decreasePerMinute / 60f;
+       
+        
         if (currentHealth >= 100)
         {
 
