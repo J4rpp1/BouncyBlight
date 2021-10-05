@@ -10,17 +10,23 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     public float decreasePerMinute;
     public HealthBar healthbar;
+   
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        
+        
     }
 
     // Update is called once per frame
     
     void Update()
     {
+        
+
+
         currentHealth -= Time.deltaTime * decreasePerMinute / 60f;
         if (currentHealth >= 100)
         {
