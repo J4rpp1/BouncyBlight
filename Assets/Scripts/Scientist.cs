@@ -16,4 +16,6 @@ public class Scientist : MonoBehaviour
         yield return new WaitForSeconds(wait_time);
         print("I waited for " + wait_time + "sec");
     }
+
+    
 }
