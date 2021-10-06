@@ -36,7 +36,7 @@ public class MoveObject : MonoBehaviour
             transform.position = Position2.position;
             yield return new WaitForSeconds(1);
             Instantiate(firePrefab, firePoint.position, firePoint.rotation);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
             transform.position = Position1.position;
         }
     }

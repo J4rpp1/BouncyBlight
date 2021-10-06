@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float MovementSpeed = 1;
-    public float JumpForce = 20;
+    public float JumpForce = 3;
     public float gravity = -9.81f;
     public bool isGrounded;
     public bool CanMove;
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
                 if (isGrounded)
                 {
                     Vector3 jumpVelocity = rb.velocity;
-                    jumpVelocity.y = 4f;
+                    jumpVelocity.y = JumpForce;
                     rb.velocity = jumpVelocity;
                 }
             }

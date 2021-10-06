@@ -6,6 +6,7 @@ public class Fire : MonoBehaviour
 {
     PlayerHealth playerHealth;
     public float healthLose = 100f;
+    
 
 
     private void Awake()
@@ -24,6 +25,11 @@ public class Fire : MonoBehaviour
     void Start()
     {
         StartCoroutine(DestroySelf());
+    }
+
+    private void Update()
+    {
+        
     }
 
     IEnumerator DestroySelf()
