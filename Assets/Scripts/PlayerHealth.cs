@@ -10,10 +10,13 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     public float decreasePerMinute;
     public HealthBar healthbar;
+    
+    
    
     // Start is called before the first frame update
     void Start()
     {
+        Score.alive = true;
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         
@@ -24,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     
     void Update()
     {
+        
 
         Player player = GetComponent<Player>();
         
@@ -39,11 +43,18 @@ public class PlayerHealth : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-           // Destroy(gameObject);
-
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            // Destroy(gameObject);
+            StartCoroutine("Death");
+            //SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 
         }
         healthbar.SetHealth(currentHealth);
+    }
+
+    IEnumerator Death()
+    {
+        Score.alive = false;
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 }

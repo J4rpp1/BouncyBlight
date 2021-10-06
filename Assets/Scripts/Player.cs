@@ -21,19 +21,25 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
-        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
-            new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayers);
-
-        if (CanMove)
+        if (Score.alive)  //you can only move if you are alive
         {
-            var movement = Input.GetAxis("Horizontal");
-            transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
-        }
 
-        if(isGrounded)
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f,1f) * JumpForce, ForceMode2D.Impulse);
+            isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
+                new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayers);
+
+            if (CanMove)
+            {
+                var movement = Input.GetAxis("Horizontal");
+                transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+
+                if (isGrounded)
+                {
+                    Vector3 jumpVelocity = rb.velocity;
+                    jumpVelocity.y = 4f;
+                    rb.velocity = jumpVelocity;
+                }
+            }
+
         }
        
     }

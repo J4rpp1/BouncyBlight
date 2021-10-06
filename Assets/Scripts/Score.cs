@@ -11,6 +11,7 @@ public class Score : MonoBehaviour
     public float hiScoreCount;
     public float displayScore;
     public static Score instance;
+    public static bool alive;
 
     private void Awake()
     {
@@ -30,9 +31,12 @@ public class Score : MonoBehaviour
     {
         displayScore = Mathf.Ceil(scoreValue);
         //score.text = (int)scoreValue + "Score";
-        scoreValue += pointIncreasedPerSecond * Time.deltaTime;
-        score.text = "Score:" + displayScore;
-        
+
+        if (alive) //score stops counting after you die
+            {
+            scoreValue += pointIncreasedPerSecond * Time.deltaTime;
+            score.text = "Score:" + displayScore;
+        }
     }
     
 }
