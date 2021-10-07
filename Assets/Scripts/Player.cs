@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
     public bool CanMove;
     public Rigidbody2D rb;
     public LayerMask groundLayers;
-   
+  
     
+  
     void Start()
     {
         CanMove = true;
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Score.alive)  //you can only move if you are alive
+        
         {
 
             isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),

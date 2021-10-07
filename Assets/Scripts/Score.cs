@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
-
+    public static Score instance;
     public float scoreValue = 0f;
     public Text score;
+    public Text HighScore;
     public float pointIncreasedPerSecond;
-    public float hiScoreCount;
+    public float hiScoreCount = 0f;
     public float displayScore;
-    public static Score instance;
     public static bool alive;
+    
 
     private void Awake()
     {
@@ -22,7 +23,8 @@ public class Score : MonoBehaviour
     {
         scoreValue = 0;
         pointIncreasedPerSecond = 1;
-        score = GetComponent<Text> ();
+        score.text = "Score" + displayScore.ToString();
+        HighScore.text = "HighScore" + hiScoreCount.ToString();
         
     }
 
