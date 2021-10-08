@@ -11,9 +11,10 @@ public class Player : MonoBehaviour
     public bool CanMove;
     public Rigidbody2D rb;
     public LayerMask groundLayers;
-  
     
-  
+
+
+
     void Start()
     {
         CanMove = true;
