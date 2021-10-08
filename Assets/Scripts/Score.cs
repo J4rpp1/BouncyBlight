@@ -10,7 +10,7 @@ public class Score : MonoBehaviour
     public Text HighScore;
     public float pointIncreasedPerSecond;
     public float hiScoreCount = 0f;
-    public float displayScore;
+    public float displayScore = 0f;
     public static bool alive;
     
 
@@ -21,24 +21,39 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hiScoreCount = PlayerPrefs.GetFloat("HighScore:");
         scoreValue = 0;
         pointIncreasedPerSecond = 1;
-        score.text = "Score" + displayScore.ToString();
-        HighScore.text = "HighScore" + hiScoreCount.ToString();
+        score.text = "Score: " + displayScore.ToString();
+        HighScore.text = "HighScore: " + hiScoreCount.ToString();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        displayScore = Mathf.Ceil(scoreValue);
-        //score.text = (int)scoreValue + "Score";
+        PlayerPrefs.SetFloat("LastScore", displayScore);
+
+        displayScore = (int)Mathf.Ceil(scoreValue);
+       
 
         if (alive) //score stops counting after you die
             {
             scoreValue += pointIncreasedPerSecond * Time.deltaTime;
-            score.text = "Score:" + displayScore;
+            score.text = "Score: " + displayScore.ToString();
+
         }
+        if (hiScoreCount < scoreValue)
+        {
+            PlayerPrefs.SetFloat("HighScore:", displayScore);
+            
+        }
+    }
+    public void AddPoint() 
+    {
+        scoreValue += 10;
+        
+       score.text = "Score: " + displayScore.ToString();
     }
     
 }

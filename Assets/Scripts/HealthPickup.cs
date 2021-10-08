@@ -19,8 +19,9 @@ public class HealthPickup : MonoBehaviour
         {
             Destroy(gameObject);
             playerHealth.currentHealth = playerHealth.currentHealth + healthBonus;
-            
-            Score.instance.displayScore += 10;
+
+            //Score.instance.displayScore += 10;
+            Score.instance.AddPoint();
         }
     }
 }

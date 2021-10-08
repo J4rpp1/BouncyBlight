@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Score.alive = true;
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
@@ -53,6 +54,8 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Death()
     {
+        Player player = GetComponent<Player>();
+        player.CanMove = false;
         Score.alive = false;
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
