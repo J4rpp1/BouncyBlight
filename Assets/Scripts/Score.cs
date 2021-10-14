@@ -11,8 +11,9 @@ public class Score : MonoBehaviour
     public float pointIncreasedPerSecond;
     public float hiScoreCount = 0f;
     public float displayScore = 0f;
+    public float money = 0f;
     public static bool alive;
-    
+  
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        money = PlayerPrefs.GetFloat("Money");
         hiScoreCount = PlayerPrefs.GetFloat("HighScore:");
         scoreValue = 0;
         pointIncreasedPerSecond = 1;
@@ -55,5 +57,15 @@ public class Score : MonoBehaviour
         
        score.text = "Score: " + displayScore.ToString();
     }
-    
+
+    public void AddCollected()
+    {
+        money += 1;
+        //PlayerPrefs.SetFloat("Money", + money);
+    }
+    public void AddMoney()
+    {
+        PlayerPrefs.SetFloat("Money", money);
+    }
 }
+ 

@@ -22,6 +22,8 @@ public class HealthPickup : MonoBehaviour
 
             //Score.instance.displayScore += 10;
             Score.instance.AddPoint();
+            Score.instance.AddCollected();
+
         }
     }
 }

@@ -57,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
         Player player = GetComponent<Player>();
         player.CanMove = false;
         Score.alive = false;
+        Score.instance.AddMoney();
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
