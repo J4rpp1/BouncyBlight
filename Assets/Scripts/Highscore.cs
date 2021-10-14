@@ -17,7 +17,8 @@ public class Highscore : MonoBehaviour
     
     public void Reset()
     {
-        PlayerPrefs.DeleteKey("HighScore:");
+        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteKey("HighScore:");
         HighScore.text = "HighScore: 0";
     }
 }

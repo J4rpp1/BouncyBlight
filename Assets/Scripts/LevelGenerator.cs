@@ -13,7 +13,7 @@ public class LevelGenerator : MonoBehaviour
     private Vector3 lastEndPosition;
     private void Awake()
     {
-        Transform lastLevelPartTransform;
+        //Transform lastevelPartTransform;
         lastEndPosition = levelPart_Start.Find("EndPosition").position;
 
         int startingSpawnLevelParts = 5;
@@ -38,8 +38,8 @@ public class LevelGenerator : MonoBehaviour
     private void SpawnLevelPart()
     {
         Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
-        Transform lastlevelParttTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
-        lastEndPosition = lastlevelParttTransform.Find("EndPosition").position;
+        Transform lastlevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
+        lastEndPosition = lastlevelPartTransform.Find("EndPosition").position;
     }
 
     private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)

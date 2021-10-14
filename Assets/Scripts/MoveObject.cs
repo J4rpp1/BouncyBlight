@@ -7,7 +7,7 @@ public class MoveObject : MonoBehaviour
     [SerializeField] Transform Position1;
     [SerializeField] Transform Position2;
     [SerializeField] private List<Sprite> Sprites;
-    [SerializeField] float ObjectSpeed = 10f;
+    //[SerializeField] float ObjectSpeed = 10f;
     private Vector3 velocity = Vector3.zero;
     public Transform firePoint;
     public GameObject firePrefab;
@@ -18,7 +18,7 @@ public class MoveObject : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(waiter());
+        StartCoroutine(Waiter());
         transform.position = Position1.position;
         
     }
@@ -29,7 +29,7 @@ public class MoveObject : MonoBehaviour
 
     }
    
-    IEnumerator waiter()
+    IEnumerator Waiter()
     {
         while (true)
         {
