@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class BuyItems : MonoBehaviour
 {
-    public float moneyCount = 0f;
-    public float canBuy1 = 0f;
+   /* public float moneyCount = 0f;
+    int item1;
+    int item2;
+    int item3;
+    int item4;
+
     public Text buyText1;
     public Text buyText2;
     public Text radiation;
@@ -22,9 +26,9 @@ public class BuyItems : MonoBehaviour
     private void Update()
     {
         moneyCount = PlayerPrefs.GetFloat("Money");
-        canBuy1 = PlayerPrefs.GetFloat("Item1Bought");
+        item1 = PlayerPrefs.GetFloat("Item1");
 
-        if (canBuy1 > 0)
+        if (item1 > 0)
         {
             buyText1.text = "Bought";
         }
@@ -32,7 +36,7 @@ public class BuyItems : MonoBehaviour
     // Update is called once per frame
     public void BuyItem1()
     {
-        if (moneyCount > 10 && canBuy1 < 1 && canBuy1 > -1)
+        if (moneyCount > 10 && 
         {
             moneyCount -= 10f;
             PlayerPrefs.SetFloat("Money", moneyCount);
@@ -43,6 +47,22 @@ public class BuyItems : MonoBehaviour
         {
             StartCoroutine(noMoney());
           
+
+        }
+    }
+    public void BuyItem2()
+    {
+        if (moneyCount > 10 && canBuy1 < 10 && canBuy1 > 9)
+        {
+            moneyCount -= 10f;
+            PlayerPrefs.SetFloat("Money", moneyCount);
+            Debug.Log("onnistui");
+            PlayerPrefs.SetFloat("Item1Bought", 1);
+        }
+        if (moneyCount < 10 && canBuy1 < 1)
+        {
+            StartCoroutine(noMoney());
+
 
         }
     }
@@ -57,5 +77,5 @@ public class BuyItems : MonoBehaviour
     {
         PlayerPrefs.SetFloat("itemSelected", 1);
         
-    }
+    } */
 }
