@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public bool CanMove;
     public Rigidbody2D rb;
     public LayerMask groundLayers;
-    
+    public AudioSource landingSound;
 
 
 
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
                     Vector3 jumpVelocity = rb.velocity;
                     jumpVelocity.y = JumpForce;
                     rb.velocity = jumpVelocity;
+                    landingSound.Play();
                 }
             }
 
