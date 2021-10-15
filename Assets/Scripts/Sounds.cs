@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dontdestroy : MonoBehaviour
+public class Sounds : MonoBehaviour
 {
-    
+
     public AudioSource start;
     private static GameObject instance;
 
@@ -13,17 +13,25 @@ public class Dontdestroy : MonoBehaviour
 
     {
         DontDestroyOnLoad(gameObject);
-        if (instance == null)
-            instance = gameObject;
-        else
-            Destroy(gameObject);
+       
     }
 
     // Update is called once per frame
     public void Playstart()
     {
         start.Play();
+        StartCoroutine(Destroy());
     }
 
-  
+    public void Menu()
+    {
+        start.Play();
+        
+    }
+
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+    }
 }
