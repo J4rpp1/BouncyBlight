@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private List<Sprite> deadSprite;
+    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer childspriteRenderer;
     public static PlayerHealth instance;
+    public GameObject childsprite;
     public float maxHealth = 100;
     public float currentHealth;
     public float decreasePerMinute;
@@ -13,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource deathSound;
     public AudioSource pickupSound;
     private bool dead;
-
+    public int selected;
 
     private void Awake()
     {
@@ -23,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        childspriteRenderer = childsprite.GetComponent<SpriteRenderer>();
         dead = false;
         Score.alive = true;
         currentHealth = maxHealth;
@@ -71,6 +77,10 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Death()
     {
+        spriteRenderer.enabled = true;
+        childspriteRenderer.enabled = false;
+        selected = Random.Range(0, deadSprite.Count);
+        spriteRenderer.sprite = deadSprite[selected]; 
         deathSound.Play();
         Debug.Log("paska");
         Player player = GetComponent<Player>();

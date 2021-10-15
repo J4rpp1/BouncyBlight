@@ -1027,12 +1027,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ef6e045cc518040b35c5ba2d802932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadSprite:
+  - {fileID: 21300000, guid: 97a33865b378a994d910be89c8d88460, type: 3}
+  - {fileID: 21300000, guid: 1d69b77d374d4854596d76cf9bda97a8, type: 3}
+  - {fileID: 21300000, guid: a223ddfa6a5b29a4d9b67d83e7f4ba65, type: 3}
+  - {fileID: 21300000, guid: 37a7535d6797fb743979f9bd6038a23e, type: 3}
+  - {fileID: 21300000, guid: 442db68d9312436499bb0b41ad8806a0, type: 3}
+  - {fileID: 21300000, guid: 66dcf74f481a24245af9ec513b53dbc0, type: 3}
+  - {fileID: 21300000, guid: 6da577d97e82376479a4dab12f4c91fb, type: 3}
+  - {fileID: 21300000, guid: 22a8b6878ed44f249b357722efa91e03, type: 3}
+  childsprite: {fileID: 759133032}
   maxHealth: 100
   currentHealth: 100
   decreasePerMinute: 1000
   healthbar: {fileID: 1453553104}
   deathSound: {fileID: 566572550}
   pickupSound: {fileID: 566572551}
+  selected: 0
 --- !u!61 &566572546
 BoxCollider2D:
   m_ObjectHideFlags: 0
