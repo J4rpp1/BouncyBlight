@@ -5,18 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    public static PlayerHealth instance;
     public float maxHealth = 100;
     public float currentHealth;
     public float decreasePerMinute;
     public HealthBar healthbar;
-    
-    
-   
+    public AudioSource deathSound;
+    public AudioSource pickupSound;
+    private bool dead;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        dead = false;
         Score.alive = true;
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
@@ -42,23 +49,35 @@ public class PlayerHealth : MonoBehaviour
 
             currentHealth = 100;
         }
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && dead == false)
         {
             // Destroy(gameObject);
+            
             StartCoroutine("Death");
+            dead = true;
+            
+            
+            
             //SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 
         }
         healthbar.SetHealth(currentHealth);
     }
+    
+    public void PickupSound()
+    {
+        pickupSound.Play();
+    }
 
     IEnumerator Death()
     {
+        deathSound.Play();
+        Debug.Log("paska");
         Player player = GetComponent<Player>();
         player.CanMove = false;
         Score.alive = false;
         Score.instance.AddMoney();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 }

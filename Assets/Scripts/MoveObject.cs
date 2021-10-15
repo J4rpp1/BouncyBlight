@@ -13,6 +13,8 @@ public class MoveObject : MonoBehaviour
     public GameObject firePrefab;
     public SpriteRenderer spriteRenderer;
     public int selected;
+    public AudioSource warning;
+    public AudioSource fire;
 
 
 
@@ -33,14 +35,17 @@ public class MoveObject : MonoBehaviour
     {
         while (true)
         {
+            
             int wait_time = Random.Range(4, 15);
             yield return new WaitForSeconds(wait_time);
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
             selected = Random.Range(0, Sprites.Count);                  //valitsee random spriten
             spriteRenderer.sprite = Sprites[selected];                  //vaihtaa spriten random hahmoksi
             transform.position = Position2.position;
+            warning.Play();
             yield return new WaitForSeconds(1);
             Instantiate(firePrefab, firePoint.position, firePoint.rotation);
+            fire.Play();
             yield return new WaitForSeconds(3);
             transform.position = Position1.position;
         }
