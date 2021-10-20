@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public LayerMask groundLayers;
     public AudioSource landingSound;
+    public float stickiness = 0.1f;
 
 
 
@@ -36,14 +37,23 @@ public class Player : MonoBehaviour
 
                 if (isGrounded)
                 {
-                    Vector3 jumpVelocity = rb.velocity;
+                    StartCoroutine (Jumping());
+                    /*Vector3 jumpVelocity = rb.velocity;
                     jumpVelocity.y = JumpForce;
                     rb.velocity = jumpVelocity;
-                    landingSound.Play();
+                    landingSound.Play();*/
                 }
             }
 
         }
        
+    }
+    IEnumerator Jumping()
+    {
+        yield return new WaitForSeconds(stickiness);
+        Vector3 jumpVelocity = rb.velocity;
+        jumpVelocity.y = JumpForce;
+        rb.velocity = jumpVelocity;
+        landingSound.Play();
     }
 }
