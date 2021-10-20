@@ -34,8 +34,8 @@ public class SkewScript : MonoBehaviour
             //velocityDirection is abrupt, so smooth it 
             smoothedDirection = Vector3.SmoothDamp(smoothedDirection, velocityDirection, ref smoothVelocity, smoothTime);
 
-            //set rotation to smoothedDirection
-            transform.rotation = Quaternion.LookRotation(smoothedDirection, Vector3.forward);
+            //set rotation to smoothedDirection, plus a very tiny vector so we don't try to orient to zero vector
+            transform.rotation = Quaternion.LookRotation(smoothedDirection + Vector3.forward*0.01f, Vector3.forward);
 
             //set scale based on direction vector magnitude between (1,1,1) and (squash, 1, stretch)
             transform.localScale = Vector3.Lerp(Vector3.one, squashAndStretch, smoothedDirection.magnitude * squashStretchMultiplier);
