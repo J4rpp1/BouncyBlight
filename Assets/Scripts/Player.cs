@@ -13,11 +13,13 @@ public class Player : MonoBehaviour
     public LayerMask groundLayers;
     public AudioSource landingSound;
     public float stickiness = 0.1f;
+    private bool jump;
 
 
 
     void Start()
     {
+        jump = false;
         CanMove = true;
     }
 
@@ -35,8 +37,9 @@ public class Player : MonoBehaviour
                 var movement = Input.GetAxis("Horizontal");
                 transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
 
-                if (isGrounded)
+                if (isGrounded && jump == false)
                 {
+                    
                     StartCoroutine (Jumping());
                     /*Vector3 jumpVelocity = rb.velocity;
                     jumpVelocity.y = JumpForce;
@@ -50,10 +53,13 @@ public class Player : MonoBehaviour
     }
     IEnumerator Jumping()
     {
+        jump = true;
+        landingSound.Play();
         yield return new WaitForSeconds(stickiness);
         Vector3 jumpVelocity = rb.velocity;
         jumpVelocity.y = JumpForce;
         rb.velocity = jumpVelocity;
-        landingSound.Play();
+        jump = false;
+        
     }
 }

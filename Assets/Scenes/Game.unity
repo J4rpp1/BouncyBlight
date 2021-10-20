@@ -1127,6 +1127,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   landingSound: {fileID: 566572549}
+  stickiness: 0.1
 --- !u!114 &566572545
 MonoBehaviour:
   m_ObjectHideFlags: 0
