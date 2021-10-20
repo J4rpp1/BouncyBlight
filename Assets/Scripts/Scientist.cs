@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Scientist : MonoBehaviour
 {
+    [SerializeField] private List<Sprite> Sprites;
+    public SpriteRenderer spriteRenderer;
+    public int selected;
 
     void Start()
     {
-        StartCoroutine(waiter());
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        selected = Random.Range(0, Sprites.Count);                  //valitsee random spriten
+        spriteRenderer.sprite = Sprites[selected];
+        
     }
 
-    IEnumerator waiter()
-    {
-        int wait_time = Random.Range(0, 4);
-        yield return new WaitForSeconds(wait_time);
-        print("I waited for " + wait_time + "sec");
-    }
-
+   
     
 }
