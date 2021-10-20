@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthbar;
     public AudioSource deathSound;
     public AudioSource pickupSound;
-    private bool dead;
+    public static bool dead;
     public int selected;
 
     private void Awake()

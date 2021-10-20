@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     PlayerHealth playerHealth;
-    public float healthLose = 100f;
+    public float healthLose = 200f;
 
 
 
