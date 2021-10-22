@@ -729,7 +729,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: ba72196c3842e8c4b8c600aeca6aa933, type: 2}
   buttonText: {fileID: 1685205172}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 676901768}
   isSkinUnlocked: 0
 --- !u!1 &232034213
@@ -934,7 +934,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: 42d729f504dff394684a04b4a9e90481, type: 2}
   buttonText: {fileID: 1359137929}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 1730370861}
   isSkinUnlocked: 0
 --- !u!1 &372380496
@@ -984,7 +984,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: cd494cd0a5c92454382d8f045545065d, type: 2}
   buttonText: {fileID: 1022745549}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 0}
   skinImage: {fileID: 26502420}
   isSkinUnlocked: 0
 --- !u!1 &373436614
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: dae8b15ccc4b94d478a4051c99513d8a, type: 2}
   buttonText: {fileID: 1779638809}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 373436616}
   isSkinUnlocked: 0
 --- !u!1 &503964236
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: 2cc740923b8d4b24bb92c4c1d362d941, type: 2}
   buttonText: {fileID: 208842397}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 1071170202}
   isSkinUnlocked: 0
 --- !u!1 &737025519
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: e7f007f2e7e02fc4d8c1bd382d3aa906, type: 2}
   buttonText: {fileID: 390803488}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 134049253}
   isSkinUnlocked: 0
 --- !u!1 &979774828
@@ -3108,7 +3108,6 @@ GameObject:
   - component: {fileID: 1033605368}
   - component: {fileID: 1033605367}
   - component: {fileID: 1033605366}
-  - component: {fileID: 1033605369}
   m_Layer: 5
   m_Name: Reset
   m_TagString: Untagged
@@ -3242,18 +3241,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033605364}
   m_CullTransparentMesh: 1
---- !u!114 &1033605369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033605364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33407e0f9ca248d4780653df404b77d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1058523595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4263,7 +4250,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: 8df29e2f8fb85e044990320836c24697, type: 2}
   buttonText: {fileID: 1930514929}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 1632566868}
   isSkinUnlocked: 0
 --- !u!1 &1337208198
@@ -4824,7 +4811,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: 81e01a0696b98a146b81fddfdc4aea4b, type: 2}
   buttonText: {fileID: 1533947053}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 64594047}
   isSkinUnlocked: 0
 --- !u!1 &1530446389
@@ -5035,7 +5022,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: ae397152ca9e8a74d93437c598fd4ed4, type: 2}
   buttonText: {fileID: 1589609366}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 262225939}
   isSkinUnlocked: 0
 --- !u!1 &1589609364
@@ -5610,7 +5597,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: aceac96b3d241d147a921cafade3d643, type: 2}
   buttonText: {fileID: 1881464082}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 150487425}
   isSkinUnlocked: 0
 --- !u!1 &1730370859
@@ -5737,7 +5724,7 @@ MonoBehaviour:
   skinInfo: {fileID: 11400000, guid: bf15445f011e38f4ebad698447ffc9e7, type: 2}
   buttonText: {fileID: 1225111052}
   error: {fileID: 232034215}
-  Equip: {fileID: 1300214447}
+  equip: {fileID: 1300214447}
   skinImage: {fileID: 534668771}
   isSkinUnlocked: 0
 --- !u!1 &1779638807

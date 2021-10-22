@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public AudioSource landingSound;
     public float stickiness = 0.1f;
     private bool jump;
+    public Animator animator;
 
 
 
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour
         landingSound.Play();
         yield return new WaitForSeconds(stickiness);
         Vector3 jumpVelocity = rb.velocity;
+        animator.SetBool("IsLanded", true);
         jumpVelocity.y = JumpForce;
         rb.velocity = jumpVelocity;
         jump = false;

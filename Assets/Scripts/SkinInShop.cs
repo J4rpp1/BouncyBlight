@@ -10,7 +10,7 @@ public class SkinInShop : MonoBehaviour
 
     public Text buttonText;
     public Text error;
-    public Text Equip;
+    public Text equip;
     public Image skinImage;
     private bool textShowing;
 
@@ -39,7 +39,7 @@ public class SkinInShop : MonoBehaviour
 
     public void OnButtonPress()
     {
-        if (isSkinUnlocked)
+        if (isSkinUnlocked && textShowing == false)
         {
             //käytä
             FindObjectOfType<SkinManager>().EquipSkin(skinInfo);
@@ -74,9 +74,9 @@ public class SkinInShop : MonoBehaviour
     IEnumerator Equipped()
     {
         textShowing = true;
-        Equip.text = "Skin Equipped";
+        equip.text = "Skin Equipped";
         yield return new WaitForSeconds(2);
-        error.text = "";
+        equip.text = "";
         textShowing = false;
     }
 }

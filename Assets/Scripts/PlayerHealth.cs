@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource pickupSound;
     public static bool dead;
     public int selected;
+    public ParticleSystem particles;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        particles.Stop();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         childspriteRenderer = childsprite.GetComponent<SpriteRenderer>();
         dead = false;
@@ -73,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
     public void PickupSound()
     {
         pickupSound.Play();
+        particles.Emit(20);
     }
 
     IEnumerator Death()
@@ -82,7 +85,6 @@ public class PlayerHealth : MonoBehaviour
         selected = Random.Range(0, deadSprite.Count);
         spriteRenderer.sprite = deadSprite[selected]; 
         deathSound.Play();
-        Debug.Log("paska");
         Player player = GetComponent<Player>();
         player.CanMove = false;
         Score.alive = false;
