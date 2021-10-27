@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
-   
-  
+    
+
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -15,6 +15,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
+           
             SceneManager.LoadScene("Game");
         }
     }

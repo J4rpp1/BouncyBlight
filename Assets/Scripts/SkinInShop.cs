@@ -48,11 +48,12 @@ public class SkinInShop : MonoBehaviour
         else
         {
             //osta
-          if (FindObjectOfType<TotalMoney>().TryRemoveMoney(skinInfo.skinPrice))
+          if (isSkinUnlocked == false && FindObjectOfType<TotalMoney>().TryRemoveMoney(skinInfo.skinPrice))
             {
               
                 PlayerPrefs.SetInt(skinInfo.skinID.ToString(), 1);
                 IsSkinUnlocked();
+                Debug.Log("sinne mäni");
             }
           else
           
