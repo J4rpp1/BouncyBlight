@@ -56,12 +56,16 @@ public class Player : MonoBehaviour
     {
         jump = true;
         landingSound.Play();
+        animator.SetBool("IsLanded", true);
         yield return new WaitForSeconds(stickiness);
         Vector3 jumpVelocity = rb.velocity;
-        animator.SetBool("IsLanded", true);
+        animator.SetBool("IsLanded", false);
+        animator.SetBool("IsJumping", true);
         jumpVelocity.y = JumpForce;
         rb.velocity = jumpVelocity;
         jump = false;
+        yield return new WaitForSeconds(stickiness);
+        animator.SetBool("IsJumping", false);
         
     }
 }
