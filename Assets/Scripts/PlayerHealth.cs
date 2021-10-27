@@ -80,8 +80,9 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Death()
     {
-        spriteRenderer.enabled = true;
-        childspriteRenderer.enabled = false;
+        GetComponent<Animator>().enabled = false;
+        //spriteRenderer.enabled = true;
+        //childspriteRenderer.enabled = false;
         selected = Random.Range(0, deadSprite.Count);
         spriteRenderer.sprite = deadSprite[selected]; 
         deathSound.Play();
