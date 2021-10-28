@@ -80,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Death()
     {
+        Time.timeScale = 1;
         GetComponent<Animator>().enabled = false;
         //spriteRenderer.enabled = true;
         //childspriteRenderer.enabled = false;

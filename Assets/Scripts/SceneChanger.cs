@@ -19,4 +19,10 @@ public class SceneChanger : MonoBehaviour
             SceneManager.LoadScene("Game");
         }
     }
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

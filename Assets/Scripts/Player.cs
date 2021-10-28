@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     {
         jump = false;
         CanMove = true;
+      
     }
 
 
@@ -68,4 +69,5 @@ public class Player : MonoBehaviour
         animator.SetBool("IsJumping", false);
         
     }
+  
 }
