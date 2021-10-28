@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public LayerMask groundLayers;
     public AudioSource landingSound;
-    public float stickiness = 0.1f;
+    public float stickiness = 0.05f;
     private bool jump;
     public Animator animator;
 

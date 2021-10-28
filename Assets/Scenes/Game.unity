@@ -1200,8 +1200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
-  JumpForce: 3
-  gravity: -30
+  JumpForce: 3.5
+  gravity: 1000
   isGrounded: 0
   CanMove: 0
   rb: {fileID: 566572540}
