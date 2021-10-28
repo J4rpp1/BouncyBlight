@@ -11,10 +11,10 @@ public class Weapon : MonoBehaviour
    
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+       /* if (Input.GetButtonDown("Fire2"))
         {
             shoot();
-        }
+        }*/
     }
 
     void shoot ()

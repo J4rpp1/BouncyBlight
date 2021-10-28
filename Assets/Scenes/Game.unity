@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 240293340}
   - component: {fileID: 240293342}
   - component: {fileID: 240293341}
+  - component: {fileID: 240293343}
   m_Layer: 0
   m_Name: Scientist
   m_TagString: Untagged
@@ -483,8 +484,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240293336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.73, y: -3.7, z: 1}
-  m_LocalScale: {x: 1.2064402, y: 1.3185136, z: 0.20511717}
+  m_LocalPosition: {x: 7.86, y: -1.0305, z: 1}
+  m_LocalScale: {x: 0.7316515, y: 0.79961896, z: 0.12439429}
   m_Children: []
   m_Father: {fileID: 519420032}
   m_RootOrder: 3
@@ -529,7 +530,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a9ee328ce9bf68247ba19273c7b3a422, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a28e1ebfa95b3046ae8d9877636ba1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -581,6 +582,7 @@ MonoBehaviour:
   selected: 0
   warning: {fileID: 240293342}
   fire: {fileID: 240293341}
+  animator: {fileID: 240293343}
 --- !u!82 &240293341
 AudioSource:
   m_ObjectHideFlags: 0
@@ -773,6 +775,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &240293343
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240293336}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2349edd3d1466044e9546b677b5becec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &245124770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765606151}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.97, y: -3.43, z: 1}
+  m_LocalPosition: {x: 7.86, y: -1.67, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -7080,7 +7101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087529694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.66, y: -1.05, z: 1}
+  m_LocalPosition: {x: 16.08, y: -2.78, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
