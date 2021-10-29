@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     public static bool dead;
     public int selected;
     public ParticleSystem particles;
+    public Text Extra;
 
     private void Awake()
     {
@@ -90,8 +92,25 @@ public class PlayerHealth : MonoBehaviour
         Player player = GetComponent<Player>();
         player.CanMove = false;
         Score.alive = false;
-        Score.instance.AddMoney();
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+
+        if (currentHealth >= 1 && dead == true)
+        {
+            dead = false;
+            GetComponent<Animator>().enabled = true;
+            player.CanMove = true;
+            Score.alive = true;
+            Extra.text = "Extra Life";
+            yield return new WaitForSeconds(2);
+            Extra.text = "";
+            
+        }
+        else
+        {
+            Score.instance.AddMoney();
+            
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        }
+        
     }
 }
